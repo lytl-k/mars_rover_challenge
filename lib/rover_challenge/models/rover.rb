@@ -1,11 +1,12 @@
 module RoverChallenge
   class Rover
-    attr_reader :x_position, :y_position, :direction
+    attr_reader :x_position, :y_position, :direction, :plateau
 
-    def initialize(x_position, y_position, direction)
+    def initialize(x_position, y_position, direction, plateau)
       @x_position = x_position
       @y_position = y_position
       @direction = compas[direction.to_sym]
+      @plateau = plateau
     end
 
     def position?
@@ -25,13 +26,13 @@ module RoverChallenge
     def move!
       case direction
       when 1
-        @y_position += 1
+        @y_position += 1 unless plateau.y_size < y_position + 1
       when 2
-        @x_position += 1
+        @x_position += 1 unless plateau.x_size < x_position + 1
       when 3
-        @y_position -= 1
+        @y_position -= 1 unless y_position.zero?
       when 4
-        @x_position -= 1
+        @x_position -= 1 unless x_position.zero?
       end
     end
 

@@ -8,6 +8,11 @@
 - The Rovers cannot go outside the bounds of the Plateau it's on
     - It will stand still when it moves towards a wall / bounds
 
+#### Known faults
+- There is minimum error handling 
+  - You can create a plateau of size 0, 0 (which should be impossible)
+  - You can enter anything when asked for the size of the plateau or the position of the rover (this could break if you enter something other than a number)
+
 #### First Phase
 - In this phase I made sure that the basic structure works and that the Rover and Plateau models work together as they should.
 - I wrote some hardcoded inputs in `remote_control.rb` to make sure that the code works as intended.
@@ -25,3 +30,22 @@
 #### Fourth Phase
 - Add Dockerfile that can be used to quickly spin up a docker image
   - This increases ease of use for any user that knows a little about docker
+
+#### Playing with the rovers... They're like little toys!! Kinda...
+There are a few different ways of doing this:
+- Way 1
+  - Install Ruby
+  - Run `bundle install`
+  - Run `bundle exec rake run_rover`
+
+- Way 2
+  - Install Docker
+  - Build the docker image by using `docker image build -t rover_test:1.0 .`
+  - Run the docker image by using `docker run rover_test:1.0`
+  - Run `bundle exec rake run_rover`
+
+#### Running automated testing
+- The project uses something called RSpec for unit tests.
+  - These tests can be run by using `bundle exec rspec`
+  - The code can be checked under `spec/rover_challenge/`
+  - This can be run in both the above Ways mentioned

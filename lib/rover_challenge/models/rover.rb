@@ -28,9 +28,9 @@ module RoverChallenge
     def move!
       case direction
       when 1
-        @y_position += 1 unless plateau.y_size < y_position + 1
+        @y_position += 1 if plateau.nil? || plateau.y_size >= y_position + 1
       when 2
-        @x_position += 1 unless plateau.x_size < x_position + 1
+        @x_position += 1 if plateau.nil? || plateau.x_size >= x_position + 1
       when 3
         @y_position -= 1 unless y_position.zero?
       when 4

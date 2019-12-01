@@ -21,3 +21,7 @@
 #### Third Phase
 - This phase was used to add some automated tests
   - These tests were used to prove that at least the challenge parameters were met
+
+#### Fourth Phase
+- Add Dockerfile that can be used to quickly spin up a docker image
+  - This increases ease of use for any user that knows a little about docker

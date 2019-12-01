@@ -13,3 +13,11 @@
 - I wrote some hardcoded inputs in `remote_control.rb` to make sure that the code works as intended.
   - The input in this file was the basic input in the challenge as well as 4 more inputs to test whether the rover goes out of bounds in any direction.
 - This code is run by using: `ruby remote_control.rb`
+
+#### Second Phase
+- In this phase I moved away from the hardcoded remote_control and added a rake task to run it with
+  - This rake task gives the user a basic interface to work with and control multiple rovers in succession
+
+#### Third Phase
+- This phase was used to add some automated tests
+  - These tests were used to prove that at least the challenge parameters were met

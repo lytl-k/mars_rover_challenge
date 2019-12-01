@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module RoverChallenge
   class Rover
     attr_reader :x_position, :y_position, :direction, :plateau

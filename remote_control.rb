@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require './lib/rover_challenge/models/plateau'
 require './lib/rover_challenge/models/rover'
 
 plateau_size = [5, 5]
 
 rover_input = [
-	{
+  {
     position: '1 2 N',
     commands: 'LMLMLMLMM'
   },

@@ -40,12 +40,12 @@ There are a few different ways of doing this:
 
 - Way 2
   - Install Docker
-  - Build the docker image by using `docker image build -t rover_test:1.0 .`
-  - Run the docker image by using `docker run rover_test:1.0`
-  - Run `bundle exec rake run_rover`
+  - Build the docker image by using `docker image build -t rover:1.0 .`
+  - Run the docker image by using `docker run -it rover:1.0 bundle exec rake run_rover`
 
 #### Running automated testing
 - The project uses something called RSpec for unit tests.
   - These tests can be run by using `bundle exec rspec`
   - The code can be checked under `spec/rover_challenge/`
-  - This can be run in both the above Ways mentioned
+  - This can either be done by Way 1 where ruby is installed and you run the command or...
+  - the docker image can be used to run this (`docker run -it rover:1.0 bundle exec rspec`)
